@@ -33,10 +33,10 @@ export class AppComponent {
 					this.blankspot = this.blankspot.substr(0, i) + this.charInput + this.blankspot.substr(i + 1);
 				}
 			}
-				this.message = "You got it"
+			this.message = "You got it";
 		}
 		else {
-			this.message = "You didn't"
+			this.message = "You didn't";
 			}
 		}
 	}
