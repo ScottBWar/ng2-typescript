@@ -9,9 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var info_service_1 = require('./info.service');
 var AppComponent = (function () {
-    function AppComponent() {
-        this.gameword = ["hello,world", "apple", "banana", "whatever"][Math.floor((Math.random() * 4))];
+    function AppComponent(infoService) {
+        this.infoService = infoService;
+        this.INFO = infoService.getInfo();
+        this.gameword = this.INFO[Math.floor((Math.random() * 4))].state;
         this.blankspot = "";
         for (var i = 0; i < this.gameword.length; i++) {
             this.blankspot += "-";
@@ -34,9 +37,10 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            templateUrl: './app/viewcomponents/welcome.html'
+            templateUrl: './app/viewcomponents/welcome.html',
+            providers: [info_service_1.InfoService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [info_service_1.InfoService])
     ], AppComponent);
     return AppComponent;
 }());

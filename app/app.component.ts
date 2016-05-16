@@ -2,17 +2,23 @@
 
 import { Component } from '@angular/core';
 
+import { InfoService } from './info.service';
+
+
 @Component({
 	selector: 'my-app',
-	templateUrl: './app/viewcomponents/welcome.html'
+	templateUrl: './app/viewcomponents/welcome.html',
+	providers: [InfoService]
 })
 export class AppComponent {
+	INFO: any[];
 	charInput:string;
 	message:string;
 	blankspot:string;
 	gameword: string;
-	constructor() {
-		this.gameword = ["hello,world", "apple", "banana","whatever"][Math.floor((Math.random() * 4))];
+	constructor(private infoService: InfoService) {
+		this.INFO = infoService.getInfo();
+		this.gameword = this.INFO[Math.floor((Math.random() * 4))].state;
 		this.blankspot = "";
 		for (let i = 0; i < this.gameword.length;i++){
 			this.blankspot += "-";
