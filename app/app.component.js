@@ -38,6 +38,7 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             templateUrl: './app/viewcomponents/welcome.html',
+            styleUrls: ['./app/viewcomponents/app.component.css'],
             providers: [info_service_1.InfoService]
         }), 
         __metadata('design:paramtypes', [info_service_1.InfoService])

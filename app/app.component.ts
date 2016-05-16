@@ -8,6 +8,7 @@ import { InfoService } from './info.service';
 @Component({
 	selector: 'my-app',
 	templateUrl: './app/viewcomponents/welcome.html',
+	styleUrls: ['./app/viewcomponents/app.component.css'],
 	providers: [InfoService]
 })
 export class AppComponent {
