@@ -1,4 +1,4 @@
-export var INFO: string[] = [
+export var INFO: any[] = [
 	{
 		"state": "Pennsylvania"
 	},
