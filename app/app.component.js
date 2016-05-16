@@ -14,7 +14,7 @@ var AppComponent = (function () {
     function AppComponent(infoService) {
         this.infoService = infoService;
         this.INFO = infoService.getInfo();
-        this.gameword = this.INFO[Math.floor((Math.random() * 4))].state;
+        this.gameword = this.INFO[Math.floor((Math.random() * this.INFO.length))].state;
         this.blankspot = "";
         for (var i = 0; i < this.gameword.length; i++) {
             this.blankspot += "-";

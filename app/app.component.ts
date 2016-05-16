@@ -18,7 +18,7 @@ export class AppComponent {
 	gameword: string;
 	constructor(private infoService: InfoService) {
 		this.INFO = infoService.getInfo();
-		this.gameword = this.INFO[Math.floor((Math.random() * 4))].state;
+		this.gameword = this.INFO[Math.floor((Math.random() * this.INFO.length))].state;
 		this.blankspot = "";
 		for (let i = 0; i < this.gameword.length;i++){
 			this.blankspot += "-";
